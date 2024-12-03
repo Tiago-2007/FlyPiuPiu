@@ -4,12 +4,13 @@ class Game {
         this.ctx = context;
         this.widht = this.canvas.widht;
         this.height = this.canvas.height;
+        this.player = new Player(this);
     }
 
     render() {
         this.ctx.fillStyle = 'red';
-        this.ctx.fillRect(100, 100, 50, 150);
-    }
+        this.player.draw();
+     }
 }
 
 window.addEventListener('load', function() {
@@ -20,4 +21,5 @@ window.addEventListener('load', function() {
 
     const game = new Game(canvas, ctx);
     game.render();
-})
+});
+
