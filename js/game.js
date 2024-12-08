@@ -4,11 +4,31 @@ class Game {
         this.ctx = context;
         this.width = this.canvas.width;
         this.height = this.canvas.height;
+        this.baseHeight = 720;
+        this.ratio = this.height / this.baseHeight
         this.player = new Player(this);
+        this.gravity;
+
+        this.resize(window.innerWidth, window.innerHeight);
+    
+        window.addEventListener('resize', e => {
+           this.resize(e.currentTarget.innerWidth, e.currentTarget.innerHeight);
+        });
+    }
+
+    resize(width, height) {
+        this.canvas.widht = width;
+        this.canvas.height = height;
+        this.width = this.canvas.width;
+        this.height = this.canvas.height;
+        this.ctx.fillStyle = '#5995F2';
+        this.ratio = this.height /  this.baseHeight;
+    
+        this.gravity = 0.15 * this.ratio;
+        this.player.resize();
     }
 
     render() {
-        this.ctx.fillStyle = 'red';
         this.player.update();
         this.player.draw();
     }
@@ -22,14 +42,11 @@ window.addEventListener('load', function() {
 
     const game = new Game(canvas, ctx);
     
-    function animate() {  
-    
+    function animate(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
         game.render();
-    this.requestAnimationFrame(animate);
-    }  
+        requestAnimationFrame(animate);
+    }
 
-    this.requestAnimationFrame(animate);
-
-});
+        requestAnimationFrame(animate);
+    });
