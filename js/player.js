@@ -7,7 +7,7 @@ class Player {
         this.spriteHeight = 200;
         this.widht;
         this.height;
-        this.speedY;
+        this.speedY = 0;
     }
     
     draw() {
