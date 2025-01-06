@@ -14,7 +14,12 @@ class Game {
         window.addEventListener('resize', e => {
            this.resize(e.currentTarget.innerWidth, e.currentTarget.innerHeight);
         });
-    }
+
+         //Mouse controls
+        this.canvas.addEventListener('mousedown', e => {
+            this.player.flap();
+        });
+}
 
     resize(width, height) {
         this.canvas.widht = width;
@@ -37,8 +42,8 @@ class Game {
 window.addEventListener('load', function() {
     const canvas = document.getElementById('game-layout');
     const ctx = canvas.getContext('2d');
-    canvas.width = 720;
-    canvas.height = 720;
+    canvas.width = 1366
+    canvas.height = 768;
 
     const game = new Game(canvas, ctx);
     
