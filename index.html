@@ -1,21 +1,26 @@
-<!--
-    Programador.........: (c) Tiago Machado
-    Data................: 29/11/2024
-    Observações.........: Um jogo em 2D
--->
+//
 
 <!DOCTYPE html>
-<html lang= "pt-PT">
+<html lang="pt-PT">
 <head>
-    <meta charset= "UTF-8">
-    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
-    <title>FlyPiupiu</title>
-    <link rel= "stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xGaMe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <canvas id ="game-layout"></canvas>canvas>
+    <canvas id="game-layout"></canvas>
+    
+    <div class="assets">
+        <img id="background" src="assets/images/background.png">
+    </div>
 
-    <script src= "./js/player.js"></script> 
-    <script src = "./js/game.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/obstacle.js"></script>
+    <script src="./js/game.js"></script>
 </body>
 </html>
