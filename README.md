@@ -18,5 +18,3 @@ The idea is to explore essential concepts in the development of interactive game
 ### Game Images
 
 ![Jogo 2D](Game.png)
-
----
